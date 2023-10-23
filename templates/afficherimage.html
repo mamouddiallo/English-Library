@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<section class="books">
+		<div class="book1">
+			<div class="image">
+
+			</div>
+			<div class="prix">
+				<div class="text">
+					<h1>Price  $11.05</h1>
+				</div>
+			</div>
+			<div class="button">
+				<div class="btn1"><button>details</button></div>
+				<div class="btn2"><button>Add to carts</button></div>
+			</div>
+		</div>
+		<div class="book2">
+			<div class="image2">
+
+			</div>
+			<div class="prix">
+				<div class="text">
+					<h1>Price  $11.05</h1>
+				</div>
+			</div>
+			<div class="button">
+				<div class="btn1"><button>details</button></div>
+				<div class="btn2"><button>Add to carts</button></div>
+			</div>
+		</div>
+		<div class="book3">
+			<div class="image3">
+				<img src="{{ url_for('get_image', id=1) }}" alt="Image">
+				
+			</div>
+			<div class="prix">
+				<div class="text">
+					<h1>Price  $11.05</h1>
+				</div>
+			</div>
+			<div class="button">
+				<div class="btn1"><button>details</button></div>
+				<div class="btn2"><button>Add to carts</button></div>
+			</div>
+		</div>
+	</section>
+</section>
+<img src="{{ url_for('show_image', image_id=1) }}" alt="Image">
+</body>
+</html>
