@@ -245,14 +245,14 @@ def add_product():
 class imm(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
-    prix= db.Column(db.Float, nullable=False)
+    prix= db.Column(db.Integer, nullable=False)
     def __init__(self, name, prix):
         self.name = name
         self.prix = prix
-@app.route("/images")
-def images():
-    ajout = imm.query.all()
-    return render_template('picture.html', ajout=ajout)
+# @app.route("/images")
+# def images():
+#     ajout = imm.query.all()
+#     return render_template('picture.html', ajout=ajout)
 
 @app.route('/addstore', methods=['GET', 'POST'])
 def addstore():
@@ -262,8 +262,13 @@ def addstore():
         db.session.add(imm(name=name, prix=prix))
         db.session.commit()
         
-        return redirect('images')
+        return redirect(url_for('afficherimage'))
     #return render_template('picture.html')
+@app.route('/images', methods=['GET'])
+# recuper tous les produits pour afficher dans table.html
+def afficherimage():
+    list_produit = imm.query.all()
+    return render_template('afficherimage.html', list_produit=list_produit)
 
 
 if __name__ == '__main__':
